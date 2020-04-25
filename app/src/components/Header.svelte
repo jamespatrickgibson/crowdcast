@@ -11,6 +11,8 @@
     display: flex;
     align-items: center;
     padding: 0 var(--space-3);
+    position: sticky;
+    top: 0;
   }
 
   .logo {

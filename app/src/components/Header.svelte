@@ -6,7 +6,7 @@
   @use "./src/assets/scss/utils/all" as *;
 
   .header {
-    background: var(--color-neutral-100);
+    @include theme(brand);
     height: grid-8pt(7);
     display: flex;
     align-items: center;
@@ -17,9 +17,10 @@
 
   .logo {
     font-weight: var(--weight-bold);
-    text-transform: uppercase;
-    font-size: var(--type-scale-5);
+    text-transform: lowercase;
+    font-size: var(--type-scale-6);
     line-height: baseline(5);
+    color: var(--color-white);
   }
 </style>
 

@@ -1,7 +1,12 @@
 :root {
-  --family-primary: BlinkMacSystemFont, -apple-system, 'Segoe UI',
-    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  --family-primary: "OakesGrotesk", BlinkMacSystemFont, -apple-system,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+  // Font Weights
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
 
   // Typographic Scale
   --type-scale-1: 0.625rem; /* 10pt */
@@ -18,7 +23,6 @@
   --type-scale-12: 4.5rem; /* 72pt */
 
   // Line Heights
-  
 
   // Typographic Measure
   --measure: 60ch;

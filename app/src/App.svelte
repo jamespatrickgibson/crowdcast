@@ -49,8 +49,8 @@
         queueWaitTime="{venue.queue_wait_time}"
       />
     {/each}
-    <hr />
-    <pre>{JSON.stringify(venues, null, 2)}</pre>
+    <!-- <hr />
+    <pre>{JSON.stringify(venues, null, 2)}</pre> -->
   {:else}
     <Box />
     <p>Loading</p>

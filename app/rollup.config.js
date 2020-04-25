@@ -24,6 +24,7 @@ export default {
        * '<template>'/'external src files' support
        **/
       preprocess: autoPreprocess({
+        postcss: true,
         scss: { includePaths: ["src"] }
       }),
       // we'll extract any component CSS out into

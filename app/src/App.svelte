@@ -19,12 +19,8 @@
   onMount(loadVenues);
 </script>
 
-<style lang="scss">
-  @use "./src/assets/scss/variables" as *;
-
-h1 {
-color: $color;
-}
+<style lang="scss" global>
+@import 'src/assets/scss/crowdcast.scss'; 
 </style>
 
 <main>

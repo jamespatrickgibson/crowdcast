@@ -1,0 +1,9 @@
+// 4pt Baseline Grid
+@function baseline($step) {
+  @return (0.25rem * $step);
+}
+
+// 8pt Layout Grid
+@function grid-8pt($step) {
+  @return (0.5rem * $step);
+}

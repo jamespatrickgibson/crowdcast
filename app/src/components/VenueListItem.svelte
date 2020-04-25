@@ -15,6 +15,9 @@
 </script>
 
 <style>
+  .venue-list-item {
+    margin-bottom: var(--space-2);
+  }
   .map-data {
     display: none;
   }
@@ -26,8 +29,8 @@
   }
 </style>
 
-<div>
-  <Box>
+<div class="venue-list-item">
+  <Box background="white" radius="2" shadow="2">
     <Text size="5" variant="strong">{name}</Text>
     <Text size="2">{address}</Text>
     <Text size="1" variant="strong">{distance}mi Away</Text>

@@ -1,0 +1,21 @@
+// Theme Mixins
+@mixin theme($theme) {
+  @if $theme == white {
+    background: var(--color-background-white);
+    color: var(--color-text-on-white);
+  } @else if $theme == light {
+    background: var(--color-background-light);
+    color: var(--color-text-on-light);
+  } @else if $theme == dark {
+    background: var(--color-background-dark);
+    color: var(--color-text-on-dark);
+  } @else if $theme == black {
+    background: var(--color-background-black);
+    color: var(--color-text-on-black);
+  } @else if $theme == brand {
+    background: var(--color-background-brand);
+    color: var(--color-text-on-brand);
+  } @else {
+    @error "Unknown theme #{$theme}.";
+  }
+}

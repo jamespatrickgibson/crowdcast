@@ -55,6 +55,11 @@
   --size-border-2: 0.125rem; /* 2pt */
   --size-border-3: 0.1875rem; /* 3pt */
 
+  --size-border-radius-1: 0.125rem; /* 2pt */
+  --size-border-radius-2: 0.25rem; /* 4pt */
+  --size-border-radius-3: 0.375rem; /* 6pt */
+  --size-border-radius-4: 0.5rem; /* 8pt */
+
   // Neutral Colors
   --color-white: hsl(0, 0%, 100%);
   --color-black: hsl(0, 0%, 0%);
@@ -81,8 +86,20 @@
   --color-primary-800: hsl(240, 100%, 20%);
   --color-primary-900: hsl(240, 100%, 10%);
 
+  // Background Colors
+  --color-background-body: var(--color-neutral-200);
+  --color-background-white: var(--color-white);
+  --color-background-light: var(--color-neutral-200);
+  --color-background-dark: var(--color-neutral-900);
+  --color-background-black: var(--color-black);
+  --color-background-brand: var(--color-primary-700);
+
   // Text Colors
-  --color-text: var(--color-neutral-700);
+  --color-text-on-white: var(--color-neutral-900);
+  --color-text-on-light: var(--color-black);
+  --color-text-on-dark: var(--color-neutral-100);
+  --color-text-on-black: var(--color-neutral-100);
+  --color-text-on-brand: var(--color-primary-100);
 
   // Border Colors
   --color-border: var(--color-neutral-200);

@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
 
   // Components
+  import Box from "./components/Box.svelte";
   import Header from "./components/Header.svelte";
   import VenueListItem from "./components/VenueListItem.svelte";
 
@@ -36,6 +37,7 @@
   {#if venues}
     {#each venues as venue (venue.id)}
       <VenueListItem
+        address="{venue.address}"
         name="{venue.name}"
         latitude="{venue.latitude}"
         longitude="{venue.longitude}"
@@ -45,11 +47,12 @@
         currentCapacity="{venue.current_capacity}"
         queueLength="{venue.queue_length}"
         queueWaitTime="{venue.queue_wait_time}"
-      >
-        <!-- <pre>{JSON.stringify(venue, null, 2)}</pre> -->
-      </VenueListItem>
+      />
     {/each}
+    <hr />
+    <pre>{JSON.stringify(venues, null, 2)}</pre>
   {:else}
+    <Box />
     <p>Loading</p>
   {/if}
 </main>

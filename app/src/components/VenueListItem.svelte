@@ -1,14 +1,13 @@
 <script>
+  import Box from "./Box.svelte";
 </script>
 
 <style lang="scss">
   @use "./src/assets/scss/utils/all" as *;
-
-  h1 {
-    color: $color;
-  }
 </style>
 
 <div>
-  <slot></slot>
+  <Box>
+    <slot />
+  </Box>
 </div>

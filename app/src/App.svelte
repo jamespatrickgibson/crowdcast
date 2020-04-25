@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
 
   // Components
+  import Header from './components/Header.svelte';
   import VenueListItem from './components/VenueListItem.svelte';
 
   let venues;
@@ -27,7 +28,8 @@
 </style>
 
 <main>
-  <h1>Crowdcast</h1>
+  <Header/>
+
   {#if venues}
   <VenueListItem>{JSON.stringify(venues, 2, null)}</VenueListItem>
   {:else}

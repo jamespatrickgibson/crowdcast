@@ -1,0 +1,65 @@
+:root {
+  --family-primary: BlinkMacSystemFont, -apple-system, 'Segoe UI',
+    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+
+  // Typographic Scale
+  --type-scale-1: 0.625rem; /* 10pt */
+  --type-scale-2: 0.75rem; /* 12pt */
+  --type-scale-3: 0.875rem; /* 14pt */
+  --type-scale-4: 1rem; /* 16pt */
+  --type-scale-5: 1.125rem; /* 18pt */
+  --type-scale-6: 1.3125rem; /* 21pt */
+  --type-scale-7: 1.5rem; /* 24pt */
+  --type-scale-8: 1.875rem; /* 30pt */
+  --type-scale-9: 2.25rem; /* 36pt */
+  --type-scale-10: 3rem; /* 48pt */
+  --type-scale-11: 3.75rem; /* 60pt */
+  --type-scale-12: 4.5rem; /* 72pt */
+
+  // Line Heights
+  
+
+  // Typographic Measure
+  --measure: 60ch;
+
+  --space-1: 0.25rem; /* 4pt */
+  --space-2: 0.5rem; /* 8pt */
+  --space-3: 1rem; /* 16pt */
+  --space-4: 2rem; /* 32pt */
+  --space-5: 4rem; /* 64pt */
+  --space-6: 8rem; /* 128pt */
+  --space-7: 16rem; /* 256pt */
+  --space-8: 32rem; /* 512pt */
+
+  // Borders
+  --size-border-1: 0.0625rem; /* 1pt */
+  --size-border-2: 0.125rem; /* 2pt */
+  --size-border-3: 0.1875rem; /* 3pt */
+
+  // Neutral Colors
+  --color-white: hsl(0, 0%, 100%);
+  --color-black: hsl(0, 0%, 0%);
+  --color-neutral-100: hsl(210, 17%, 95.3%);
+  --color-neutral-200: hsl(211.3, 15.4%, 92.6%);
+  --color-neutral-300: hsl(211, 13.7%, 88.6%);
+  --color-neutral-400: hsl(210.6, 13.9%, 83.2%);
+  --color-neutral-500: hsl(209.5, 10.8%, 71%);
+  --color-neutral-600: hsl(209.5, 7.1%, 55.7%);
+  --color-neutral-700: hsl(209.5, 8.8%, 31.4%);
+  --color-neutral-800: hsl(210.6, 10.3%, 22.8%);
+  --color-neutral-900: hsl(210, 11%, 14.5%);
+  --color-neutral-050: hsl(214.3, 14.9%, 97.7%);
+
+  // Primary Colors
+  --color-primary-050: hsl(240, 100%, 95%);
+  --color-primary-100: hsl(240, 100%, 90%);
+  --color-primary-200: hsl(240, 100%, 80%);
+  --color-primary-300: hsl(240, 100%, 70%);
+  --color-primary-400: hsl(240, 100%, 60%);
+  --color-primary-500: hsl(240, 100%, 50%);
+  --color-primary-600: hsl(240, 100%, 40%);
+  --color-primary-700: hsl(240, 100%, 30%);
+  --color-primary-800: hsl(240, 100%, 20%);
+  --color-primary-900: hsl(240, 100%, 10%);
+}

@@ -34,9 +34,21 @@
   <Header />
 
   {#if venues}
-    <VenueListItem>
-      <pre>{JSON.stringify(venues, null, 2)}</pre>
-    </VenueListItem>
+    {#each venues as venue (venue.id)}
+      <VenueListItem
+        name="{venue.name}"
+        latitude="{venue.latitude}"
+        longitude="{venue.longitude}"
+        distance="{venue.distance}"
+        timestamp="{venue.timestamp}"
+        maxCapacity="{venue.max_capacity}"
+        currentCapacity="{venue.current_capacity}"
+        queueLength="{venue.queue_length}"
+        queueWaitTime="{venue.queue_wait_time}"
+      >
+        <!-- <pre>{JSON.stringify(venue, null, 2)}</pre> -->
+      </VenueListItem>
+    {/each}
   {:else}
     <p>Loading</p>
   {/if}

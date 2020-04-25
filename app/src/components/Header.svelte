@@ -10,15 +10,14 @@
     height: grid-8pt(7);
     display: flex;
     align-items: center;
-    padding: 0 var(--space-2);
+    padding: 0 var(--space-3);
   }
 
   .logo {
     font-weight: var(--weight-bold);
-    // text-transform: uppercase;
+    text-transform: uppercase;
     font-size: var(--type-scale-5);
-    // line-height: baseline(6);
-    background: pink;
+    line-height: baseline(5);
   }
 </style>
 

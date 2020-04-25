@@ -1,6 +1,9 @@
 <script>
   import { onMount } from 'svelte';
 
+  // Components
+  import VenueListItem from './components/VenueListItem.svelte';
+
   let venues;
 
   async function loadVenues() {
@@ -25,5 +28,9 @@
 
 <main>
   <h1>Crowdcast</h1>
-  <div>{JSON.stringify(venues, 2, null)}</div>
+  {#if venues}
+  <VenueListItem>{JSON.stringify(venues, 2, null)}</VenueListItem>
+  {:else}
+  <p>Loading</p>
+  {/if}
 </main>

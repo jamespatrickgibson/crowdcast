@@ -1,6 +1,10 @@
 <script>
   import { onMount } from 'svelte';
 
+  // Components
+  import Header from './components/Header.svelte';
+  import VenueListItem from './components/VenueListItem.svelte';
+
   let venues;
 
   async function loadVenues() {
@@ -19,15 +23,16 @@
   onMount(loadVenues);
 </script>
 
-<style lang="scss">
-  @use "./src/assets/scss/variables" as *;
-
-h1 {
-color: $color;
-}
+<style lang="scss" global>
+@import 'src/assets/scss/crowdcast.scss'; 
 </style>
 
 <main>
-  <h1>Crowdcast</h1>
-  <div>{JSON.stringify(venues, 2, null)}</div>
+  <Header/>
+
+  {#if venues}
+  <VenueListItem>{JSON.stringify(venues, 2, null)}</VenueListItem>
+  {:else}
+  <p>Loading</p>
+  {/if}
 </main>

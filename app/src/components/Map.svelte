@@ -23,7 +23,7 @@
         container,
         style: "mapbox://styles/mapbox/streets-v9",
         center: [lon, lat],
-        zoom
+        zoom: 13
       });
     };
 
@@ -41,8 +41,8 @@
 
   .venue-map {
     width: 100%;
-    height: 70vw;
-
+    height: 30vh;
+    z-index: -1;
     @include desktop {
       z-index: -1;
       height: 100vh;

@@ -6,11 +6,8 @@
   @use "./src/assets/scss/utils/all" as *;
 
   .header {
-    // https://www.toptal.com/designers/subtlepatterns/patterns/prism.png
-    // https://www.toptal.com/designers/subtlepatterns/patterns/webb.png
-    // https://www.toptal.com/designers/subtlepatterns/patterns/double-bubble-dark.png
     // https://www.toptal.com/designers/subtlepatterns/patterns/memphis-mini-dark.png
-    background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/memphis-mini-dark.png"),
+    background-image: url("./memphis-mini-dark.png"),
       linear-gradient(
         var(--color-background-brand),
         var(--color-background-brand)
@@ -21,8 +18,11 @@
     display: flex;
     align-items: center;
     padding: var(--space-3) var(--space-3) 0 var(--space-3);
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
   }
 
   .logo {

@@ -42,36 +42,39 @@
   @import "src/assets/scss/crowdcast.scss";
 
   main {
+    position: fixed;
+    top: var(--cc-size-height-header);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 90;
     @include desktop {
-      position: fixed;
-      top: var(--cc-size-height-header);
-      right: 0;
-      bottom: 0;
-      left: 0;
-      overflow: hidden;
       display: grid;
       grid-template-columns: 1fr 30rem;
     }
   }
 
   .venues-list {
+    position: relative;
+    height: 70vh;
+
     @include desktop {
-      position: relative;
+      height: auto;
     }
 
     &__content {
       padding: var(--space-2);
-
+      overflow: scroll;
+      height: 100%;
+      position: absolute;
       @include desktop {
-        overflow: scroll;
-        height: 100%;
-        position: absolute;
         top: 0;
         right: 0;
         left: auto;
         width: 100%;
-        padding: var(--space-3);
         padding-bottom: var(--cc-size-height-header);
+        padding: var(--space-3);
       }
     }
   }
@@ -87,6 +90,7 @@
           lat="{venue.latitude}"
           lon="{venue.longitude}"
           label="{venue.name}"
+          image="{venue.photo_url}"
         />
       {/each}
     {/if}

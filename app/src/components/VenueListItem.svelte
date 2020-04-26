@@ -7,11 +7,13 @@
   export let longitude;
   export let timestamp;
   export let maxCapacity;
+  export let openNow = false;
   export let photoUrl;
   export let queueLength;
   export let queueWaitTime;
 
   import Box from "./Box.svelte";
+  import Tag from "./Tag.svelte";
   import Text from "./Text.svelte";
 </script>
 
@@ -49,11 +51,13 @@
 </style>
 
 <div class="venue-list-item">
-
   <figure class="venue-list-item__image">
     <img src="{photoUrl}" alt="{name}" loading="lazy" />
   </figure>
   <div class="venue-list-item__content">
+    {#if openNow}
+      <Tag>Open Now</Tag>
+    {/if}
     <Text size="5" variant="strong">{name}</Text>
     <Text size="2">{address}</Text>
     <Text size="1" variant="strong">{distance}mi Away</Text>

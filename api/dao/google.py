@@ -64,7 +64,8 @@ class GooglePhotos(object):
 
     @staticmethod
     def get_url(photo_reference=None):
-        return f"{PHOTOS_URL}?photoreference={photo_reference}&key={API_KEY}"
+        return (f"{PHOTOS_URL}?photoreference={photo_reference}&key={API_KEY}"
+                f"&maxheight=400")
         # # Query parameters
         # payload = {
         #     'photoreference': photo_reference,

@@ -11,7 +11,7 @@ class GooglePlaces(object):
 
     @staticmethod
     def get(latitude=DEFAULT_LAT, longitude=DEFAULT_LONG,
-            radius=DEFAULT_RANGE, place_type='bar', open_now=True,
+            radius=DEFAULT_RANGE, place_type='bar', open_now=None,
             page_token=None):
 
         # Query parameters
@@ -19,9 +19,11 @@ class GooglePlaces(object):
             'location': f"{latitude},{longitude}",
             'radius': radius,
             'type': place_type,
-            'opennow': open_now,
             'key': API_KEY,
         }
+
+        if open_now is not None:
+            payload['opennow'] = open_now
 
         # Fetch next page of results
         if page_token:
@@ -49,7 +51,11 @@ class GooglePlaces(object):
                 RESPONSE_ADDRESS: result['vicinity'],
                 RESPONSE_LAT: result['geometry']['location']['lat'],
                 RESPONSE_LONG: result['geometry']['location']['lng'],
-                RESPONSE_OPEN: result['opening_hours']['open_now'],
+                RESPONSE_OPEN: (
+                    result['opening_hours']['open_now']
+                    if 'opening_hours' in result
+                    else None
+                ),
                 RESPONSE_RATING: result['rating'],
                 RESPONSE_PHOTO_URL: GooglePhotos.get_url(
                     result['photos'][0]['photo_reference']

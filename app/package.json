@@ -22,6 +22,7 @@
     "svelte-preprocess": "^3.7.4"
   },
   "dependencies": {
+    "mapbox-gl": "^1.9.1",
     "sirv-cli": "^0.4.4"
   }
 }

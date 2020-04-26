@@ -103,4 +103,10 @@
 
   // Border Colors
   --color-border: var(--color-neutral-200);
+
+  // Responsiveness
+  --size-breakpoint-desktop: 48.0625rem;
+
+  // App Specfic Tokens
+  --cc-size-height-header: 4.5rem;
 }

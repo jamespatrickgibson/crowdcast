@@ -1,12 +1,21 @@
+# Sorting
+ASCENDING = 'asc'
+DESCENDING = 'desc'
+
 # Default values
 DEFAULT_LAT = 37.871853
 DEFAULT_LONG = -122.258423
-DEFAULT_RANGE = 1000  # meters
+DEFAULT_RANGE = 5  # miles
+DEFAULT_SORT_FIELD = 'distance'
+DEFAULT_SORT_ORDER = 'asc'  # or 'desc'
 
 # Query parameters
 QUERY_PARAM_LAT = 'latitude'
 QUERY_PARAM_LONG = 'longitude'
 QUERY_PARAM_RANGE = 'range'
+QUERY_PARAM_SORT_FIELD = 'sort_by'
+QUERY_PARAM_SORT_ORDER = 'sort_order'
+QUERY_PARAM_NEXT_PAGE = 'next_page_token'
 
 # Response fields
 RESPONSE_RESULTS = 'results'

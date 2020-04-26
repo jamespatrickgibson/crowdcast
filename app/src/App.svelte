@@ -61,6 +61,7 @@
           timestamp="{venue.timestamp}"
           maxCapacity="{venue.max_capacity}"
           currentCapacity="{venue.current_capacity}"
+          photoUrl="{venue.photo_url}"
           queueLength="{venue.queue_length}"
           queueWaitTime="{venue.queue_wait_time}"
         />

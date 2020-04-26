@@ -26,8 +26,7 @@ RESPONSE_QUEUE_LEN = 'queue_length'
 RESPONSE_QUEUE_WAIT = 'queue_wait_time'
 RESPONSE_NEXT_PAGE = 'next_page_token'
 
-# Google shit - TODO: this should NOT be in the app but figure this out later
-API_KEY = 'AIzaSyAmaVzACfwDHYIagudCxIuOfiwK6nXpx_M'
+# Google shit
 NEARBY_SEARCH_URL = 'https://maps.googleapis.com/maps/api/place/nearbysearch'
 NEARBY_SEARCH_OUTPUT = 'json'
 PHOTOS_URL = 'https://maps.googleapis.com/maps/api/place/photo'

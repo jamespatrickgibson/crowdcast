@@ -44,33 +44,65 @@
     &__content {
       padding: var(--space-3);
     }
+
+    &__status {
+      display: flex;
+      align-items: center;
+      height: grid-8pt(3);
+    }
+
+    &__wait-time {
+      height: grid-8pt(4);
+      padding-top: grid-8pt(1);
+    }
+
+    &__capacity {
+      height: grid-8pt(7);
+      padding-top: grid-8pt(2);
+    }
   }
 </style>
 
-<div class="venue-list-item">
+<div class="venue-list-item" class:is-full="{isFull}">
   <figure class="venue-list-item__image">
     <img src="{photoUrl}" alt="{name}" loading="lazy" />
   </figure>
   <div class="venue-list-item__content">
-    <Stack space="3">
-      {#if openNow}
-        <Tag>Open Now</Tag>
-      {/if}
+    <Stack space="2">
 
+      <!-- Venue Info -->
       <div>
-        <Text size="5" variant="strong">{name}</Text>
+        <Text size="4" variant="strong">{name}</Text>
         <Text size="2">{address}</Text>
         <Text size="1" variant="strong">
           <TextStyle tone="muted">{distance}mi Away</TextStyle>
         </Text>
       </div>
 
+      <!-- Venue Status -->
       {#if queueWaitTime && isFull}
-        <Text size="3">Currently Full</Text>
-        <Text size="3">{queueLength} People In Line</Text>
-        <Text size="2">{queueWaitTime} Minute Wait</Text>
+        <div class="venue-list-item__status">
+          <!-- {#if openNow}
+          <Tag>Open Now</Tag>
+        {/if} -->
+
+          <Tag>Currently Full</Tag>
+        </div>
+      {/if}
+
+      {#if queueWaitTime && isFull}
+        <div class="venue-list-item__wait-time">
+          <Text size="2" variant="strong">
+            About a {queueWaitTime} Minute Wait
+          </Text>
+          <Text size="1" variant="strong">
+            <TextStyle tone="muted">{queueLength} People In Line</TextStyle>
+          </Text>
+        </div>
       {:else}
-        <VenueCapacity current="{currentCapacity}" maximum="{maxCapacity}" />
+        <div class="venue-list-item__capacity">
+          <VenueCapacity current="{currentCapacity}" maximum="{maxCapacity}" />
+        </div>
       {/if}
     </Stack>
   </div>

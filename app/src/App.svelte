@@ -43,7 +43,6 @@
 
   main {
     @include desktop {
-      // height: calc(var(--cc-size-height-header) - 100vh);
       position: fixed;
       top: var(--cc-size-height-header);
       right: 0;
@@ -59,16 +58,10 @@
     @include desktop {
       position: relative;
     }
-    // @include desktop {
-    //   overflow: scroll;
-    //   height: 100%;
-    //   position: absolute;
-    //   top: 0;
-    //   right: 0;
-    //   left: auto;
-    // }
 
     &__content {
+      padding: var(--space-2);
+
       @include desktop {
         overflow: scroll;
         height: 100%;
@@ -77,8 +70,9 @@
         right: 0;
         left: auto;
         width: 100%;
+        padding: var(--space-3);
+        padding-bottom: var(--cc-size-height-header);
       }
-      padding: var(--space-2);
     }
   }
 </style>
@@ -120,8 +114,8 @@
         {/each}
       </div>
     </div>
-    <!-- <hr />
-    <pre>{JSON.stringify(venues.results, null, 2)}</pre> -->
+    <hr />
+    <!-- <pre>{JSON.stringify(venues, null, 2)}</pre> -->
   {:else}
     <Box>
       <Text>Loading</Text>

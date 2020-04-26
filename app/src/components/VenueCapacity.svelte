@@ -20,6 +20,11 @@
     }
   }
 
+  function percentFull() {
+    let percent = Math.floor((current / maximum) * 100);
+    return percent;
+  }
+
   import Stack from "./Stack.svelte";
   import Text from "./Text.svelte";
   import TextStyle from "./TextStyle.svelte";
@@ -32,6 +37,7 @@
   $venue-capacity-value-color: var(--color-primary-400);
 
   .venue-capacity {
+    width: 100%;
     progress {
       apperance: none;
       border: none;
@@ -82,8 +88,13 @@
 <div class="venue-capacity">
   <Stack space="1">
     <progress value="{current}" max="{maximum}"></progress>
-    <Text size="3" variant="strong">
-      <TextStyle tone="brand">{fullness()}</TextStyle>
-    </Text>
+    <div>
+      <Text size="2" variant="strong">
+        <TextStyle tone="brand">{fullness()}</TextStyle>
+      </Text>
+      <Text size="1" variant="strong">
+        <TextStyle tone="muted">{percentFull()}% Full</TextStyle>
+      </Text>
+    </div>
   </Stack>
 </div>

@@ -38,8 +38,11 @@
 
 <style>
   div {
+    /* position: fixed;
+    top: grid-8pt(9);
+    z-index: -1; */
     width: 100vw;
-    height: 50vw;
+    height: 70vw;
   }
 </style>
 

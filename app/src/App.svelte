@@ -36,14 +36,13 @@
 
 <main>
   <Header />
-
-  <Map lat="{35}" lon="{-84}" zoom="{3.5}">
+  <Map lat="{37.872}" lon="{-122.258}" zoom="{13}">
     {#if venues}
       {#each venues.results as venue (venue.id)}
         <MapMarker
           lat="{venue.latitude}"
           lon="{venue.longitude}"
-          label="Svelte Body Shaping"
+          label="{venue.name}"
         />
       {/each}
     {/if}

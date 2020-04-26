@@ -11,14 +11,19 @@
   export let photoUrl;
   export let queueLength;
   export let queueWaitTime;
+  export let isFull = false;
 
   import Box from "./Box.svelte";
   import Tag from "./Tag.svelte";
   import Text from "./Text.svelte";
+  import TextStyle from "./TextStyle.svelte";
+  import Stack from "./Stack.svelte";
+  import VenueCapacity from "./VenueCapacity.svelte";
 </script>
 
 <style lang="scss">
   @use "./src/assets/scss/utils/all" as *;
+
   .venue-list-item {
     margin-bottom: var(--space-2);
     display: grid;
@@ -26,6 +31,7 @@
     @include theme(white);
     border-radius: var(--size-border-radius-3);
     overflow: hidden;
+    box-shadow: $shadow-3;
 
     &__image {
       img {
@@ -39,15 +45,6 @@
       padding: var(--space-3);
     }
   }
-  .map-data {
-    display: none;
-  }
-  .max-capacity {
-    display: none;
-  }
-  .updated-time {
-    display: none;
-  }
 </style>
 
 <div class="venue-list-item">
@@ -55,30 +52,26 @@
     <img src="{photoUrl}" alt="{name}" loading="lazy" />
   </figure>
   <div class="venue-list-item__content">
-    {#if openNow}
-      <Tag>Open Now</Tag>
-    {/if}
-    <Text size="5" variant="strong">{name}</Text>
-    <Text size="2">{address}</Text>
-    <Text size="1" variant="strong">{distance}mi Away</Text>
+    <Stack space="3">
+      {#if openNow}
+        <Tag>Open Now</Tag>
+      {/if}
 
-    <Text size="3">{currentCapacity} People There</Text>
+      <div>
+        <Text size="5" variant="strong">{name}</Text>
+        <Text size="2">{address}</Text>
+        <Text size="1" variant="strong">
+          <TextStyle tone="muted">{distance}mi Away</TextStyle>
+        </Text>
+      </div>
 
-    <div class="map-data">
-      <Text size="1">Lat/Long {latitude} / {longitude}</Text>
-    </div>
-    <div class="updated-time">
-      <Text size="2">Updated {timestamp}</Text>
-    </div>
-    <div class="max-capacity">
-      <Text>{maxCapacity} Max Capacity</Text>
-    </div>
-
-    {#if queueWaitTime}
-      <Text size="3">{queueLength} People In Line</Text>
-      <Text size="2">{queueWaitTime} Minute Wait</Text>
-    {:else}
-      <Text size="2">No Wait!</Text>
-    {/if}
+      {#if queueWaitTime && isFull}
+        <Text size="3">Currently Full</Text>
+        <Text size="3">{queueLength} People In Line</Text>
+        <Text size="2">{queueWaitTime} Minute Wait</Text>
+      {:else}
+        <VenueCapacity current="{currentCapacity}" maximum="{maxCapacity}" />
+      {/if}
+    </Stack>
   </div>
 </div>

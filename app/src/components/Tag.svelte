@@ -2,13 +2,14 @@
   @use "./src/assets/scss/utils/all" as *;
 
   .tag {
-    font-size: var(--type-scale-2);
+    font-size: var(--type-scale-1);
     line-height: var(--line-height-3);
     font-weight: var(--weight-bold);
     background: var(--color-primary-050);
-    color: var(--color-primary-300);
+    color: var(--color-primary-400);
     display: inline-flex;
-    padding: 0 var(--space-1);
+    align-items: center;
+    padding: 0 var(--space-2);
     border-radius: var(--size-border-radius-2);
   }
 </style>

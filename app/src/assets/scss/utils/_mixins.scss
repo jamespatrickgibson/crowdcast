@@ -19,3 +19,12 @@
     @error "Unknown theme #{$theme}.";
   }
 }
+
+// Media Queries
+$size-breakpoint-desktop: 48.0625rem;
+
+@mixin desktop {
+  @media screen and (min-width: $size-breakpoint-desktop) {
+    @content;
+  }
+}

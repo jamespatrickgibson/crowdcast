@@ -36,17 +36,21 @@
   });
 </script>
 
-<style>
-  div {
-    /* position: fixed;
-    top: grid-8pt(9);
-    z-index: -1; */
-    width: 100vw;
+<style lang="scss">
+  @use "./src/assets/scss/utils/all" as *;
+
+  .venue-map {
+    width: 100%;
     height: 70vw;
+
+    @include desktop {
+      z-index: -1;
+      height: 100vh;
+    }
   }
 </style>
 
-<div bind:this="{container}">
+<div class="venue-map" bind:this="{container}">
   {#if map}
     <slot />
   {/if}

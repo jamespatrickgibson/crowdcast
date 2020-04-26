@@ -38,11 +38,54 @@
 </script>
 
 <style lang="scss" global>
+  @use "./src/assets/scss/utils/all" as *;
   @import "src/assets/scss/crowdcast.scss";
+
+  main {
+    @include desktop {
+      // height: calc(var(--cc-size-height-header) - 100vh);
+      position: fixed;
+      top: var(--cc-size-height-header);
+      right: 0;
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 30rem;
+    }
+  }
+
+  .venues-list {
+    @include desktop {
+      position: relative;
+    }
+    // @include desktop {
+    //   overflow: scroll;
+    //   height: 100%;
+    //   position: absolute;
+    //   top: 0;
+    //   right: 0;
+    //   left: auto;
+    // }
+
+    &__content {
+      @include desktop {
+        overflow: scroll;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: auto;
+        width: 100%;
+      }
+      padding: var(--space-2);
+    }
+  }
 </style>
 
+<Header />
+
 <main>
-  <Header />
   <Map lat="{37.872}" lon="{-122.258}" zoom="{13}">
     {#if venues}
       {#each venues.results as venue (venue.id)}
@@ -53,29 +96,30 @@
         />
       {/each}
     {/if}
-
   </Map>
 
   {#if venues}
-    <Box space="2">
-      {#each venues.results as venue (venue.id)}
-        <VenueListItem
-          address="{venue.address}"
-          name="{venue.name}"
-          latitude="{venue.latitude}"
-          longitude="{venue.longitude}"
-          distance="{venue.distance.toFixed(2)}"
-          timestamp="{venue.timestamp}"
-          maxCapacity="{venue.max_capacity}"
-          openNow="{venue.open_now}"
-          currentCapacity="{venue.current_capacity}"
-          photoUrl="{venue.photo_url}"
-          queueLength="{venue.queue_length}"
-          queueWaitTime="{venue.queue_wait_time}"
-          isFull="{isVenueFull(venue)}"
-        />
-      {/each}
-    </Box>
+    <div class="venues-list">
+      <div class="venues-list__content">
+        {#each venues.results as venue (venue.id)}
+          <VenueListItem
+            address="{venue.address}"
+            name="{venue.name}"
+            latitude="{venue.latitude}"
+            longitude="{venue.longitude}"
+            distance="{venue.distance.toFixed(2)}"
+            timestamp="{venue.timestamp}"
+            maxCapacity="{venue.max_capacity}"
+            openNow="{venue.open_now}"
+            currentCapacity="{venue.current_capacity}"
+            photoUrl="{venue.photo_url}"
+            queueLength="{venue.queue_length}"
+            queueWaitTime="{venue.queue_wait_time}"
+            isFull="{isVenueFull(venue)}"
+          />
+        {/each}
+      </div>
+    </div>
     <!-- <hr />
     <pre>{JSON.stringify(venues.results, null, 2)}</pre> -->
   {:else}

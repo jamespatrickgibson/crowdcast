@@ -103,12 +103,12 @@ class QueueTrackerDaemon(threading.Thread):
             # if we are viewing a video and we did not grab a frame then we
             # have reached the end of the video, restart
             if frame is None:
-                #self.vs = cv2.VideoCapture(self.inputFile)
-                #continue
+                self.vs = cv2.VideoCapture(self.inputFile)
+                # also save out the video and delete the writer
                 if self.writer is not None:
                     self.writer.release()
-                break #TODO fix this before deploy
-
+                    self.writer = None
+                continue
             # resize the frame to have a maximum width of 500 pixels (the
             # less data we have, the faster we can process it), then convert
             # the frame from BGR to RGB for dlib

@@ -3,6 +3,7 @@ import json
 import requests
 
 from constants import *
+from keys import API_KEY
 
 
 class GooglePlaces(object):

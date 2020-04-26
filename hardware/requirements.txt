@@ -1,5 +1,9 @@
+cmake==3.17.1
 dlib==19.19.0
 imutils==0.5.3
 numpy==1.18.3
 opencv-python==4.2.0.34
 scipy==1.4.1
+Flask==1.1.2
+flask-cors==3.0.7
+flask-restful==0.3.8

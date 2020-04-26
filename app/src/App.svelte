@@ -27,6 +27,13 @@
       });
   }
 
+  function isVenueFull(venue) {
+    if (venue.current_capacity >= venue.max_capacity) {
+      return true;
+    }
+    return false;
+  }
+
   onMount(loadVenues);
 </script>
 
@@ -65,13 +72,15 @@
           photoUrl="{venue.photo_url}"
           queueLength="{venue.queue_length}"
           queueWaitTime="{venue.queue_wait_time}"
+          isFull="{isVenueFull(venue)}"
         />
       {/each}
     </Box>
-    <hr />
-    <pre>{JSON.stringify(venues.results, null, 2)}</pre>
+    <!-- <hr />
+    <pre>{JSON.stringify(venues.results, null, 2)}</pre> -->
   {:else}
-    <Box />
-    <p>Loading</p>
+    <Box>
+      <Text>Loading</Text>
+    </Box>
   {/if}
 </main>

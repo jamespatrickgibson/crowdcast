@@ -60,6 +60,7 @@
           distance="{venue.distance.toFixed(2)}"
           timestamp="{venue.timestamp}"
           maxCapacity="{venue.max_capacity}"
+          openNow="{venue.open_now}"
           currentCapacity="{venue.current_capacity}"
           photoUrl="{venue.photo_url}"
           queueLength="{venue.queue_length}"

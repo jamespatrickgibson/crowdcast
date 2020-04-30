@@ -10,7 +10,7 @@ _Note: The app is currently populated with static data and assets. During the ha
 
 Crowdcast was a our submission for Hack:now, the all-online 36-hour global hackathon that ran from April 24-26. This event was hosted by the team from Cal Hacks, the world's largest collegiate hackathon with ~2000 attendees held annually at UC Berkeley and run by the student group Hack the Bay in partnership with CITRIS Foundary.
 
-*Recognized as one of the "Top 30 Teams of hack:now", by making it to the highly competitive second round of judging.*
+**Recognized as one of the "Top 30 Teams of hack:now", by making it to the highly competitive second round of judging!**
 
 ## What It Does
 

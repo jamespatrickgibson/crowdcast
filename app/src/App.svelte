@@ -12,16 +12,12 @@
   let venues;
 
   async function loadVenues() {
-    venues = await fetch(
-      // "https://nifty-passkey-275314.uc.r.appspot.com/venues",
-      "response.json",
-      {
-        method: "GET",
-        headers: {
-          "content-type": "application/json"
-        }
+    venues = await fetch("response.json", {
+      method: "GET",
+      headers: {
+        "content-type": "application/json"
       }
-    )
+    })
       .then(response => response.json())
       .catch(err => {
         console.log(err);

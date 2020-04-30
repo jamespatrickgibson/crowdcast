@@ -13,7 +13,8 @@
 
   async function loadVenues() {
     venues = await fetch(
-      "https://nifty-passkey-275314.uc.r.appspot.com/venues",
+      // "https://nifty-passkey-275314.uc.r.appspot.com/venues",
+      "response.json",
       {
         method: "GET",
         headers: {

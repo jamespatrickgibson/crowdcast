@@ -70,8 +70,8 @@
         right: 0;
         left: auto;
         width: 100%;
-        padding-bottom: var(--cc-size-height-header);
         padding: var(--space-3);
+        padding-bottom: var(--cc-size-height-header);
       }
     }
   }

@@ -2,7 +2,7 @@
 
 Find out which bars and restaurants have small crowds and short lines in the era of social distancing.
 
-(See a Demo)[https://elated-benz-92515b.netlify.app]
+[View Crowdcast Demo App](https://elated-benz-92515b.netlify.app)
 
 _Note: The app is currently populated with static data and assets. During the hack:now event, it was wired up to an API powered by Flask, Google Places API and Google Photo API_
 
